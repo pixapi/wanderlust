@@ -6,6 +6,7 @@ gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
+gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -39,8 +40,11 @@ group :development, :test do
   gem 'launchy'
   gem "factory_girl_rails"
   gem "database_cleaner"
-  gem 'rails_12factor', group: :production
-  gem 'shoulda'
+  gem 'shoulda-matchers', '~> 3.1'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 group :development do
