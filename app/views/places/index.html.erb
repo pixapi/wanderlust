@@ -1,0 +1,15 @@
+<h1>All Places</h1>
+
+<div class="places_list">
+  <ul>
+    <% @places.each do |place| %>
+    <li>Destination: <%= place.name %></li>
+    <li>Country: <%= place.country %></li>
+    <li>Continent :<%= place.continent_id %></li>
+    <li>Experience: <%= place.experience %></li>
+    <li>Category: <%= place.category_id %></li>
+    <%#= image_tag("wanderlust_quote.jpg", :class => "about_img",:alt => "feet and flip flops on a beach") %>
+    <img src="<%= place.image_path %>" alt="some_text" style="width:width;height:height;">
+    <% end %>
+  </ul>
+</div>
