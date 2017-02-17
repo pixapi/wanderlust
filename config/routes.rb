@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'sessions#homepage'
+  root to: 'pages#homepage'
 
   resources :users, only: [:new, :create, :show]
 
@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  get '/about', to: 'sessions#about'
+  get '/about', to: 'pages#about'
 end
