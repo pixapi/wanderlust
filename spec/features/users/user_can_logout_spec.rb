@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "Loggin user logouts" do
   scenario "logged in user can logout" do
     user = User.create(username: "Maria", password: "password")
+    # user = create(:user)
 
     visit login_path
     fill_in "Username", with: user.username
