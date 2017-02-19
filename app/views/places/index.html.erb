@@ -3,13 +3,22 @@
 <div class="places_list">
   <ul>
     <% @places.each do |place| %>
-    <li>Destination: <%= place.name %></li>
-    <li>Country: <%= place.country %></li>
-    <li>Continent :<%= place.continent_id %></li>
-    <li>Experience: <%= place.experience %></li>
-    <li>Category: <%= place.category_id %></li>
-    <%#= image_tag("wanderlust_quote.jpg", :class => "about_img",:alt => "feet and flip flops on a beach") %>
-    <img src="<%= place.image_path %>" alt="some_text" style="width:width;height:height;">
+    <li><%= link_to place.name, place_path(place) %> (<%= place.country %>)</li>
+    <img src="<%= place.image_path %>" alt="some_text" style="width:width;height:height;"> <%#miniature-size%>
     <% end %>
   </ul>
 </div>
+
+<h2><%= link_to "Suggest a place", new_place_path %></h2>
+
+<h3><%= @user.username %></h3>
+<h4><%= link_to "My Profile", user_path(@user) %>
+<%= link_to "Logout", logout_path, method: :delete %></h4>
+
+<%= @continents.each do |continent| %>
+<%= link_to continent.name, continent_path(continent) %>
+<% end %>
+
+<%= @categories.each do |category| %>
+<%= link_to category.name, category_path(category) %>
+<% end %>

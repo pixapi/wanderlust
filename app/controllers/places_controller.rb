@@ -1,8 +1,9 @@
 class PlacesController < ApplicationController
   def index
     @places = Place.all
-    # @continent = Continent.find(params[:id]) #so I can call in view continent.name
-    # @category = Category.find(params[:id]) #so I can call in view category.name
+    @user = current_user
+    @continents = Continent.all
+    @categories = Category.all
   end
 
   def new
@@ -12,7 +13,8 @@ class PlacesController < ApplicationController
   def create
     @place = Place.new(place_params)
     if @place.save
-      redirect_to place_path(@path)
+      flash[:success] = "Thanks for your recommendation of a great place"
+      redirect_to places_path
     else
       render :new
     end

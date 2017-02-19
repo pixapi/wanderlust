@@ -1,0 +1,3 @@
+<h1>Best destinations in <%= @category.name %></h1>
+<% @places.each do |place| %>
+<%= link_to place.name, place_path(place)  %> (<%= place.country  %>)<% end %>

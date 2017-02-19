@@ -1,0 +1,6 @@
+<div>
+  <h4>Comment by <%= comment.author.username %></h4>
+  <p class="title"><%= comment.title %></p>
+  <p class="comment"><%= comment.body %></p>
+  <p>Posted: <%=comment.created_at.strftime("%m/%d/%Y at %l:%M %P")%></p>
+</div>

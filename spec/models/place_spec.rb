@@ -10,6 +10,7 @@ describe Place do
     it { should validate_uniqueness_of :name }
     it { should belong_to(:continent) }
     it { should belong_to(:category) }
+    it { should have_many(:users) }
     it { should have_many(:users).through(:my_places_lists) }
   end
 

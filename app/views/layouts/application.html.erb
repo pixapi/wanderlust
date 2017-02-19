@@ -8,23 +8,28 @@
   <%#= stylesheet_link_tag    'application', media: 'all' %>
   <%#= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet"
   href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <header>
-       <%= render partial: 'layouts/nav' %>
+    <% if current_user %>
+      <%= render partial: 'layouts/nav' %>
+      <%= render partial: 'layouts/welcome' %>
+    <% else %>
+      <%= render partial: 'layouts/initial_nav' %>
+    <% end %>
   </header>
   <main>
-    <%= render partial: 'layouts/welcome' %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+    <% end %>
     <%= yield %>
   </main>
   <footer>
     <%= render partial: 'layouts/footer' %>
   </footer>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 </body>
 </html>

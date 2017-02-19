@@ -1,3 +1,2 @@
-class MyPlacesLists
-  Controller < ApplicationController
+class MyPlacesListsController < ApplicationController
 end
