@@ -1,6 +1,7 @@
 class PlacesController < ApplicationController
   def index
     @places = Place.all
+    # @places = Place.where(approved: true)
     @user = current_user
     @continents = Continent.all
     @categories = Category.all
@@ -22,6 +23,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    @comment = Comment.new
   end
 
   private

@@ -1,0 +1,4 @@
+<% @places.each do |place| %>
+  <%= place.name %>
+  <%= button_to admin_place_path(place, approved: true) %>
+<% end %>

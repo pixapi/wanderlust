@@ -1,24 +1,27 @@
-<%# if admin render :new, else _suggest_new %>
 <h1>Suggest a new place</h1>
 <%= form_for @place do |f| %>
-
+<p>
 <%= f.label :name %>
-<%= f.text_field :name %>
-
+<%= f.text_field :name %><br />
+</p>
+<p>
 <%= f.label :country %>
 <%= f.text_field :country %>
-
+</p>
+<p>
 <%= f.label :continent_id %>
-<%= f.text_field :continent_id %>
-<%#= f.collection_select(:continent_id, Continent.all, :id, :name) %>
-
+<%= f.collection_select :continent_id, Continent.all, :id, :name, :prompt => 'Please Select a Continent',     class: "form-control" %> %>
+</p>
+<p>
 <%= f.label :experience %>
 <%= f.text_field :experience %>
-
+</p>
+<p>
 <%= f.label :category_id %>
-<%= f.text_field :category_id %>
-<%#= f.collection_select(:category_id, Category.all, :id, :name) %>
+<%= f.collection_select :category_id, Category.all, :id, :name, :prompt => 'Please Select a Category',     class: "form-control" %>
+</p>
 
+<p>
 <%= f.submit "Suggest Place" %>
 
 <% end %>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :require_user, only: [:show]
+  before_action :current_admin?, except: [:show]
 
   def new
     @user = User.new

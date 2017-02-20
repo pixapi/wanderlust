@@ -15,10 +15,16 @@
 <h4><%= link_to "My Profile", user_path(@user) %>
 <%= link_to "Logout", logout_path, method: :delete %></h4>
 
-<%= @continents.each do |continent| %>
+<div class="continents">
+  Continents:
+<% @continents.each do |continent| %>
 <%= link_to continent.name, continent_path(continent) %>
 <% end %>
+</div>
 
-<%= @categories.each do |category| %>
+<div class="categories">
+  Categories:
+<% @categories.each do |category| %>
 <%= link_to category.name, category_path(category) %>
 <% end %>
+</div>

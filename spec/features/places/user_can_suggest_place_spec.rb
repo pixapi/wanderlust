@@ -15,15 +15,12 @@ RSpec.describe "User suggests a place" do
 
     fill_in "place[name]", with: "place1"
     fill_in "place[country]", with: "country1"
-    fill_in "place[continent_id]", with: continent.id
-    #select "Europe", from: "place.continent.name"
+    find("#place_continent_id").find(:xpath, "option[2]").select_option
     fill_in "place[experience]", with: "Magic sunset from Mirador de San Jeronimo"
-    fill_in "place[category_id]", with: category.id
-    #select "Photography", from: "place.category_id"
+    find("#place_category_id").find(:xpath, "option[2]").select_option
     click_button "Suggest Place"
 
     expect(current_path). to eq places_path
-    # expect(page). to have_content("place1")
     expect(Place.count).to eq(1)
     expect(page).to have_content("Thanks for your recommendation of a great place")
   end

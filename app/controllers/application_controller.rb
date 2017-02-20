@@ -14,11 +14,12 @@ class ApplicationController < ActionController::Base
   end
 
   def current_admin?
-    if current_user.role == 1
-      true
-    else
-      false
-    end
+
+    current_user && current_user.role == 1
+    #   true
+    # else
+    #   false
+    # end
   end
 
   # def current_admin?
