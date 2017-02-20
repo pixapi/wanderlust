@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170219175814) do
+ActiveRecord::Schema.define(version: 20170220164026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170219175814) do
     t.integer  "place_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.boolean  "bucket",     default: false
   end
 
   add_index "my_places_lists", ["place_id"], name: "index_my_places_lists_on_place_id", using: :btree
