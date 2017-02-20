@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :require_user, only: [:show]
+  before_action :current_admin?, except: [:show]
 
   def new
     @user = User.new
@@ -9,14 +9,35 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to places_path
     else
       render :new
     end
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    if @user.save
+      flash[:success] = "Profile updated!"
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+    redirect_to root_path
   end
 
   private

@@ -1,0 +1,14 @@
+<ul>
+<%= @place.name %>
+<li>Country: <%= @place.country %></li>
+<li>Continent :<%= @place.continent.name %></li>
+<li>Category: <%= @place.category.name %></li>
+<li>Experience: <%= @place.experience %></li>
+<img src="<%= @place.image_path %>" alt="some_text" style="width:width;height:height;">
+</ul>
+
+<div class="comments"
+  <h3> Comments</h3>
+  <%= render partial: 'places/comment', collection: @place.comments.reverse %>
+  <%= render partial: 'comments/form' %>
+</div>

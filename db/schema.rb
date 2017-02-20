@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170216043110) do
+ActiveRecord::Schema.define(version: 20170220164026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170216043110) do
     t.integer  "place_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.boolean  "bucket",     default: false
   end
 
   add_index "my_places_lists", ["place_id"], name: "index_my_places_lists_on_place_id", using: :btree
@@ -58,8 +59,9 @@ ActiveRecord::Schema.define(version: 20170216043110) do
     t.string   "image_path"
     t.integer  "continent_id"
     t.integer  "category_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "approved",     default: false
   end
 
   add_index "places", ["category_id"], name: "index_places_on_category_id", using: :btree
@@ -69,10 +71,10 @@ ActiveRecord::Schema.define(version: 20170216043110) do
     t.string   "username"
     t.string   "e_mail"
     t.string   "password_digest"
-    t.integer  "role"
+    t.integer  "role",                  default: 0
     t.integer  "score"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "password_confirmation"
   end
 

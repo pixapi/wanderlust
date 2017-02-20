@@ -3,6 +3,7 @@ class Place < ActiveRecord::Base
   validates :name, uniqueness: true
   belongs_to :continent
   belongs_to :category
+  has_many :comments
   has_many :my_places_lists
   has_many :users, through: :my_places_lists
 end

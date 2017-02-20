@@ -1,0 +1,6 @@
+<h1><%= @continent.name %></h1>
+
+<% @places.each do |place| %>
+<%= link_to place.name, place_path(place)  %> (<%= place.country  %>)
+<%= place.image_path  %>
+<% end %>

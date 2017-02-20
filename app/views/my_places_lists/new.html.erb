@@ -1,0 +1,11 @@
+<h1>Create a Bucket List</h1>
+
+<%= form_for [@user, @my_places_list] do |f| %>
+<p>Check the boxes of the places that you want to add to your list.</p>
+<p>
+  <% collection_check_boxes(:post, :place, Place.all, :id, :name)  %>
+</p>
+<p>
+<%= f.submit %>
+</p>
+<% end %>
