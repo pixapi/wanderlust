@@ -1,5 +1,7 @@
-<h3>All Places</h3>
-  <div class="row">
+<div class="page-title">
+  <h1>All Places</h1>
+</div>
+<div class="row">
   <% @places.each do |place| %>
     <div class="col s12 m6 l3">
     <div class="card">
@@ -20,22 +22,18 @@
   <% end %>
 </div>
 
-<h2><%= link_to "Suggest a place", new_place_path %></h2>
-
-<h3><%= @user.username %></h3>
-<h4><%= link_to "My Profile", user_path(@user) %>
-<%= link_to "Logout", logout_path, method: :delete %></h4>
+<h5><%= link_to "Suggest a place", new_place_path %></h5>
 
 <div class="continents">
   Continents:
 <% @continents.each do |continent| %>
-<%= link_to continent.name, continent_path(continent) %>
+<%= link_to continent.name, continent_path(continent) %> |
 <% end %>
 </div>
 
 <div class="categories">
   Categories:
 <% @categories.each do |category| %>
-<%= link_to category.name, category_path(category) %>
+<%= link_to category.name, category_path(category) %> |
 <% end %>
 </div>

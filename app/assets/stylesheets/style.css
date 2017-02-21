@@ -1,16 +1,36 @@
+/*main*/
+
+.page-title h1 {
+  font-size: 32px;
+  color: #0D85CC;
+  padding-left: 10px;
+}
+
+.user-menu, .before-user-menu {
+  postion: absolute;
+  padding-left: 10px;
+}
+
+/*navigation*/
+
 nav {
   background-color: #4CDCEA;
-  color: green;
   font-family: 'Lato', sans-serif;
 }
+
+/*homepage*/
+
+.homepage-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*index cards*/
 
 .card-image {
   height: 150px;
   width: 250px;
-}
-
-.col s12 m6 l3 {
-  display: inline-block;
 }
 
 .country {
@@ -20,4 +40,38 @@ nav {
 .card {
   height: 280px;
   width: 250px;
+}
+
+/*show cards*/
+
+.card-indiv {
+  height: 700px;
+  width: 700px;
+}
+
+.card-image-indiv {
+  height: 500px;
+  width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-card {
+  font-size: 18px;
+}
+
+/*comments*/
+
+#comment-section-title, #post-comment {
+  font-size: 16px;
+  color: #0D85CC;
+}
+
+.comments-list {
+  color: #000;
+}
+
+.comment-title {
+  font-style: italic;
 }

@@ -1,6 +1,6 @@
 <div>
-  <h4>Comment by <%= comment.user.username %></h4>
-  <p class="title"><%= comment.title %></p>
-  <p class="comment"><%= comment.body %></p>
+  <h6>Comment by <%= comment.user.username %></h6>
+  <p class="comment-title"><%= comment.title %></p>
+  <p class="comment-body">"<%= comment.body %>"</p>
   <p>Posted: <%=comment.created_at.strftime("%m/%d/%Y at %l:%M %P")%></p>
 </div>
