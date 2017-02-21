@@ -10,8 +10,8 @@
     <span class="card-title activator grey-text text-darken-4"><i class="material-icons right"></i></span>
     <div class="content-card">
       <p>Country: <%= @place.country %></p>
-      <p>Continent: <%= @place.continent.name %><br /></p>
-      <p>Category: <%= @place.category.name %><br /></p>
+      <p>Continent: <%= link_to @place.continent.name, continent_path(@place.continent) %><br /></p>
+      <p>Category: <%= link_to @place.category.name, category_path(@place.category) %><br /></p>
       <p>Experience: <%= @place.experience %></p>
     </div>
   </div>

@@ -22,7 +22,7 @@
         <li><a href="#">My Bucket List</a></li>
         <li><a href="#">My Profile</a></li>
         <li><%# link_to "My Bucket List", user_my_places_list(current_user) %></li>
-        <li><%# link_to "My Profile", user_path(current_user) %></li>
+        <li><% link_to "My Profile", user_path(current_user) %></li>
       </ul>
     </div>
   </nav>
