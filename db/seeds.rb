@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Continent.destroy
+Category.destroy
+Place.destroy
+
 africa = Continent.create(name: "Africa")
 europe = Continent.create(name: "Europe")
 asia = Continent.create(name: "Asia")
@@ -18,13 +22,6 @@ urban = Category.create(name: "Urban")
 beach = Category.create(name: "Beach")
 mountain = Category.create(name: "Mountain")
 mystical = Category.create(name: "Mystical")
-
-place1 = Place.create(name: "Bagan",
-                    country: "Burma",
-                    experience: "In the land of temples and mysticism",
-                    image_path: "http://1.bp.blogspot.com/-EnODUGOH9m0/U9ab_g_5a4I/AAAAAAAAMh8/uZ4Zno9eVRw/s1600/Templos-Anada-Pagoda-y-Shwe-Gu-Gyi-Bagan.JPG",
-                    category_id: 4,
-                    continent_id: 3)
 
 place2 = Place.create(name: "Serengeti National Park",
                     country: "Tanzania",

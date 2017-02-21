@@ -1,14 +1,29 @@
-<ul>
-<%= @place.name %>
-<li>Country: <%= @place.country %></li>
-<li>Continent :<%= @place.continent.name %></li>
-<li>Category: <%= @place.category.name %></li>
-<li>Experience: <%= @place.experience %></li>
-<img src="<%= @place.image_path %>" alt="some_text" style="width:width;height:height;">
-</ul>
+<div class="page-title">
+  <h1><%= @place.name %></h1>
+</div>
 
+<div class="card card-indiv">
+  <div class="card-image card-image-indiv waves-effect waves-block waves-light">
+    <img class="activator" src="<%= @place.image_path %>">
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4"><i class="material-icons right"></i></span>
+    <div class="content-card">
+      <p>Country: <%= @place.country %></p>
+      <p>Continent: <%= @place.continent.name %><br /></p>
+      <p>Category: <%= @place.category.name %><br /></p>
+      <p>Experience: <%= @place.experience %></p>
+    </div>
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+  </div>
+</div>
 <div class="comments"
-  <h3> Comments</h3>
+  <h3 id="comment-section-title"> Comments</h3>
+  <div class="comments-list">
   <%= render partial: 'places/comment', collection: @place.comments.reverse %>
   <%= render partial: 'comments/form' %>
+  </div>
 </div>
