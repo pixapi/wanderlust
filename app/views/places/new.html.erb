@@ -1,4 +1,4 @@
-<h1>Suggest a new place</h1>
+<h1 id="suggest-place-title">Suggest a new place</h1>
 <%= form_for @place do |f| %>
 <p>
 <%= f.label :name %>
@@ -10,7 +10,7 @@
 </p>
 <p>
 <%= f.label :continent_id %>
-<%= f.collection_select :continent_id, Continent.all, :id, :name, :prompt => 'Please Select a Continent',     class: "form-control" %> %>
+<%= f.collection_select :continent_id, Continent.all, :id, :name, :prompt => 'Please Select a Continent',     class: "form-control" %>
 </p>
 <p>
 <%= f.label :experience %>

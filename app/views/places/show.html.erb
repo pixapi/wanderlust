@@ -1,4 +1,4 @@
-<div class="page-title">
+<div class="page-title" id ="show-title">
   <h1><%= @place.name %></h1>
 </div>
 
@@ -20,10 +20,11 @@
     <p>Here is some more information about this product that is only revealed once clicked on.</p>
   </div>
 </div>
-<div class="comments"
-  <h3 id="comment-section-title"> Comments</h3>
+<div class="comments-block">
   <div class="comments-list">
   <%= render partial: 'places/comment', collection: @place.comments.reverse %>
+  </div>
+  <div class="comment-form">
   <%= render partial: 'comments/form' %>
   </div>
 </div>

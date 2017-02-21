@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#homepage'
 
   resources :users, only: [:new, :create, :show, :edit, :update, :destroy] do
-    resources :my_places_lists, only: [:new, :create, :edit, :update]
+    resources :my_places_lists, only: [:new, :create, :show, :edit, :update]
   end
 
   resources :places, only: [:index, :new, :create, :show] do

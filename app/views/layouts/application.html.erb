@@ -19,8 +19,10 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "Places", places_path %></li>
-        <li><a href="collapsible.html">My Bucket List</a></li>
-        <li><a href="collapsible.html">My Profile</a></li>
+        <li><a href="#">My Bucket List</a></li>
+        <li><a href="#">My Profile</a></li>
+        <li><%# link_to "My Bucket List", user_my_places_list(current_user) %></li>
+        <li><%# link_to "My Profile", user_path(current_user) %></li>
       </ul>
     </div>
   </nav>

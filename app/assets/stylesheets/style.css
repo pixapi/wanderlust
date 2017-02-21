@@ -18,6 +18,10 @@ nav {
   font-family: 'Lato', sans-serif;
 }
 
+/*.nav-wrapper .brand-logo a {
+  padding-left: 10px;
+}*/
+
 /*homepage*/
 
 .homepage-image {
@@ -47,6 +51,8 @@ nav {
 .card-indiv {
   height: 700px;
   width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card-image-indiv {
@@ -59,6 +65,10 @@ nav {
 
 .content-card {
   font-size: 18px;
+}
+
+#show-title {
+  text-align: center;
 }
 
 /*comments*/
@@ -74,4 +84,15 @@ nav {
 
 .comment-title {
   font-style: italic;
+}
+
+.comments-block {
+  margin-left: : 40px;
+}
+
+/*forms*/
+
+#suggest-place-title {
+  font-size: 28px;
+  color: #0D85CC;
 }
