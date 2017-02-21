@@ -1,12 +1,23 @@
-<h1>All Places</h1>
-
-<div class="places_list">
-  <ul>
-    <% @places.each do |place| %>
-    <li><%= link_to place.name, place_path(place) %> (<%= place.country %>)</li>
-    <img src="<%= place.image_path %>" alt="some_text" style="width:width;height:height;"> <%#miniature-size%>
-    <% end %>
-  </ul>
+<h3>All Places</h3>
+  <div class="row">
+  <% @places.each do |place| %>
+    <div class="col s12 m6 l3">
+    <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="<%= place.image_path %>">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"><%= link_to place.name, place_path(place) %> <br />
+            <span class="country">(<%= place.country %>)<i class="material-icons right">+</i></span>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%= place.name %><i class="material-icons right">-</i></span>
+          <p>Why to go there: </p>
+          <p><%= place.experience %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 <h2><%= link_to "Suggest a place", new_place_path %></h2>

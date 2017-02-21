@@ -3,3 +3,21 @@ nav {
   color: green;
   font-family: 'Lato', sans-serif;
 }
+
+.card-image {
+  height: 150px;
+  width: 250px;
+}
+
+.col s12 m6 l3 {
+  display: inline-block;
+}
+
+.country {
+  font-size: 18px;
+}
+
+.card {
+  height: 280px;
+  width: 250px;
+}
